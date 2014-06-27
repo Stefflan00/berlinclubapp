@@ -1,0 +1,13 @@
+<h2>All Clubs</h2>
+
+<% @clubs.each do |club| %>
+  <div class ="well">
+    <%= club.name %>
+    ||
+    <%= club.description %>
+    <p>
+      <%= link_to "More Info",  sites_club_path(club)  %>
+    </p>
+  </div>
+
+<% end %>

@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @club.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @club.description %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @club.img_url %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @club.address %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @club.lat %>
+</p>
+<p>
+  <strong>Lng:</strong>
+  <%= @club.lng %>
+</p>
+
+<hr>
+<h2>Events</h2>
+
+<% @club.events.each do |event| %>
+<p>
+  <strong>Event</strong>
+  <%= event.name %>
+</p>
+<p>
+  <strong>Description</strong>
+  <%= event.description %>
+</p>
+<p>
+  <strong>Date</strong>
+  <%= event.date %>
+</p>
+
+
+<% end %>
+
+<hr>
+<h2>
+  Add an Event
+</h2>
+
+<%= form_for([@club, @club.events.build]) do |f|  %>
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+</p>
+<p>
+  <%=f.label :date %>
+  <%=f.date_field :date  %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
+
+<%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %>

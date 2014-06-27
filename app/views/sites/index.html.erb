@@ -1,0 +1,28 @@
+<h1>Berlin Club App</h1>
+
+
+<h2>All Clubs</h2>
+
+<% @clubs.each do |club| %>
+  <div class ="well">
+    <%= club.name %>
+    ||
+    <%= club.description %>
+    <%= link_to "More Info",  sites_club_path(club)  %>
+  </div>
+
+<% end %>
+
+
+<h2>All Events</h2>
+
+<% @events.each do |event| %>
+  <div class ="well">
+    <%= event.name %>
+    <%= event.date %>
+    <%= event.description %>
+    <p>
+        <%= link_to "more info", sites_event_path(event) %>
+    </p>
+  </div>
+<% end %>

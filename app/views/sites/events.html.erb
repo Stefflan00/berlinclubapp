@@ -1,0 +1,12 @@
+<h2>All Events</h2>
+
+<% @events.each do |event| %>
+  <div class = "well">
+    <%= event.name %>
+    <%= event.date %>
+    <%= event.description %>
+    <p>
+        <%= link_to "more info", sites_event_path(event) %>
+    </p>
+  </div>
+<% end %>
