@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'puma'
 # Google Maps for the Club address
 gem 'gmaps4rails', '~> 2.1.2'
 gem 'underscore-rails'
