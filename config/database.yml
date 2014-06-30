@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: berlinclubapp_production
-  username: berlinclubapp
-  password: <%= ENV['BERLINCLUBAPP_DATABASE_PASSWORD'] %>
+  username: root
+  password: prds0912
