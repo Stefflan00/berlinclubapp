@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: berlinclubapp_production
-  username: root
-  password: tf2k9ljkow
+  username: deploy
+  password: prds0912
   socket: localhost
