@@ -15,5 +15,5 @@ namespace :ubuntu do
     end
   end
 
-  after :finishing, 'ubuntu:cleanup'
+  after :finishing, 'deploy:cleanup'
 end
