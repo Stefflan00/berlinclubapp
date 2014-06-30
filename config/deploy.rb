@@ -6,7 +6,7 @@ set :deploy_to, '/home/ubuntu/bitterblueberry'
 #set :linked_files, %w{config/database.yml}
 #set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-namespace :ubuntu do
+namespace :deploy do
 
   desc 'Restart application'
   task :restart do
