@@ -51,4 +51,4 @@ production:
   <<: *default
   database: berlinclubapp_production
   username: root
-  password: prds0912
+  password: tf2k9ljkow
