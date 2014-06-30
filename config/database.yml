@@ -52,4 +52,4 @@ production:
   database: berlinclubapp_production
   username: deploy
   password: prds0912
-  socket: localhost
+  socket: /var/run/mysqld/mysqld.sock
