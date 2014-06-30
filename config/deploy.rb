@@ -1,6 +1,6 @@
 set :application, 'BerlinClubApp'
 set :repo_url, 'git@github.com:Stefflan00/berlinclubapp.git'
-
+set :scm, :git
 set :deploy_to, '/home/ubuntu/bitterblueberry'
 
 #set :linked_files, %w{config/database.yml}
