@@ -52,3 +52,4 @@ production:
   database: berlinclubapp_production
   username: root
   password: tf2k9ljkow
+  socket: localhost
