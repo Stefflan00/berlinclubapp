@@ -23,7 +23,14 @@
   <%= @club.address %>
 
 
-<div style='width: 100%;'>
+<% end %>
+
+
+
+<hr style="color:white;">
+
+
+<div  style='width: 100%;'>
   <div id="custom_style" style='width: 100%; height: 300px;'></div>
 </div>
 
@@ -169,18 +176,17 @@
       internal: {id: 'custom_style'},
       provider: {
         zoom:      15,
-        center:    new google.maps.LatLng(<%= @club.lat %>,<%= @club.lng %>),
+        center:    new google.maps.LatLng(<%= @club.lat%>,<%= @club.lng%>),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         styles:    mapStyle
       }
     },
     function(){
     var markers = handler.addMarkers([
-    { lat: <%= @club.lat %>, lng: <%= @club.lng %>}
+    { lat: <%= @club.lat%>, lng: <%= @club.lng%>}
   ]);
   handler.bounds.extendWith(markers);
     }
   );
 
 </script>
-<% end %>
