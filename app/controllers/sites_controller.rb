@@ -1,4 +1,6 @@
 class SitesController < ApplicationController
+before_action :authenticate_admin!, only: :dashboard
+
   def index
     @clubs = Club.all
     @events = Event.all
@@ -21,4 +23,9 @@ class SitesController < ApplicationController
   def events
     @events = Event.all
   end
+
+  def dashboard
+
+  end
+
 end

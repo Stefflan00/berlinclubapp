@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :admins
+
+  get 'sites/dashboard' => "sites#dashboard", as: 'sites_dashboard'
+
+
   resources :clubs do
     resources :events
   end
