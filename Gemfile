@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 # Google Maps for the Club address
 gem 'gmaps4rails', '~> 2.1.2'
+gem 'geocoder'
 gem 'underscore-rails'
+gem 'friendly_id', '~> 5.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use mysql as the database for Active Record
@@ -22,7 +24,7 @@ gem 'devise', '~> 3.2.4'
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
-
+gem 'will_paginate', '~> 3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

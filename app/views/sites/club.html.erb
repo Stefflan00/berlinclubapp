@@ -20,10 +20,11 @@
         <%= link_to "more info", sites_event_path(event) %>
     </p>
   </div>
-  <%= @club.address %>
-
-
 <% end %>
+
+<p>
+  <%= @club.address %>
+</p>
 
 
 
@@ -35,9 +36,8 @@
 </div>
 
 
-
-
 <script charset="utf-8">
+
   var mapStyle = [
     {
         "featureType": "water",
@@ -176,14 +176,14 @@
       internal: {id: 'custom_style'},
       provider: {
         zoom:      15,
-        center:    new google.maps.LatLng(<%= @club.lat%>,<%= @club.lng%>),
+        center:    new google.maps.LatLng(<%= @club.latitude %>,<%= @club.longitude %>),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         styles:    mapStyle
       }
     },
     function(){
     var markers = handler.addMarkers([
-    { lat: <%= @club.lat%>, lng: <%= @club.lng%>}
+    { lat: <%= @club.latitude %>, lng: <%= @club.longitude %>}
   ]);
   handler.bounds.extendWith(markers);
     }

@@ -8,8 +8,9 @@ before_action :authenticate_admin!, only: :dashboard
 
   def club
 
-    @club = Club.find(params[:id])
+    @club = Club.friendly.find(params[:id])
     @events = @club.events.all
+
   end
 
   def event

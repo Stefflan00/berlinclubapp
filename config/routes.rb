@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   get 'sites/dashboard' => "sites#dashboard", as: 'sites_dashboard'
 
-
   resources :clubs do
+    collection { post :import }
     resources :events
   end
   get 'sites/clubs'

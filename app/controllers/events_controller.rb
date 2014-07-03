@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 before_action :authenticate_admin!
 
 def create
-  @club = Club.find(params[:club_id])
+  @club = Club.friendly.find(params[:club_id])
   @event = @club.events.create(event_params)
   redirect_to club_path(@club)
 

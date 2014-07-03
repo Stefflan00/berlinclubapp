@@ -20,8 +20,8 @@
         <td><%= club.description %></td>
         <td><%= club.img_url %></td>
         <td><%= club.address %></td>
-        <td><%= club.lat %></td>
-        <td><%= club.lng %></td>
+        <td><%= club.latitude  %></td>
+        <td><%= club.longitude %></td>
         <td><%= link_to 'Show', club %></td>
         <td><%= link_to 'Edit', edit_club_path(club) %></td>
         <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,5 +31,12 @@
 </table>
 
 <br>
+
+<h2>Import Artists</h2>
+
+<%= form_tag import_clubs_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import CSV File", :class => 'btn btn-success' %>
+<% end %>
 
 <%= link_to 'New Club', new_club_path %>
