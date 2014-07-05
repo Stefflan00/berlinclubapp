@@ -2,7 +2,8 @@ class SitesController < ApplicationController
 before_action :authenticate_admin!, only: :dashboard
 
   def index
-    @clubs = Club.all
+
+    @clubs = Club.order('clubs.name ASC').paginate(:page => params[:page], :per_page => 15)
     @events = Event.all
   end
 
