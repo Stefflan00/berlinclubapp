@@ -12,7 +12,6 @@
 //
 //= require gmaps/google
 //= require mapsstyle
-//= require gmapsgen
 //= require underscore
 //= require jquery
 //= require jquery_ujs

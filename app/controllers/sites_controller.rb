@@ -11,6 +11,10 @@ before_action :authenticate_admin!, only: :dashboard
 
     @club = Club.friendly.find(params[:id])
     @events = @club.events.all
+    @hash = Gmaps4rails.build_markers(@club) do |club, marker|
+      marker.lat club.latitude
+      marker.lng club.longitude
+    end
 
   end
 
