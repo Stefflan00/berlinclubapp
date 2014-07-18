@@ -39,8 +39,8 @@ Rails.application.configure do
     domain: 'gmail.com',
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "berlinclubapp@gmail.com",
-    password: "PRds0912"
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
   }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
