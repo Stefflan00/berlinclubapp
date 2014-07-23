@@ -1,28 +1,28 @@
 <h2><%= @event.name %> - <%= @event.date %></h2>
 <div class="well">
-<p>
-  <%= @event.description %>
-</p>
-
-
-<%= form_tag "/sites/update2" do %>
   <p>
-    <%= select_tag 'tables', options_for_select([1,2,3,4,5,6,7,8,9]) %>
-  </p>
-  <p>
-    <%= select_tag 'persons', options_for_select([1,2,3,4,5,6,7,8,9]) %>
-  </p>
-  <p>
-    <%= label "Email" %>
-    <%= email_field_tag 'email' %>
-  </p>
-  <p>
-      <%= submit_tag "Book It" %>
+    <%= @event.description %>
   </p>
 
+    <h3>Book a Table</h3>
+    <div align="center">
+      <%= simple_form_for @booking, :html => {:class => 'form-horizontal' } do |f| %>
+        <%= f.input :name, :required => true %>
+        <%= f.input :email, :required => true %>
+        <%= f.input :tablequantity, :collection => [1,2,3,4,5], :selected => 1 %>
+        <%= f.input :personquantity, :collection => [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], :selected => 1%>
+        <%= f.input :message, :as => :text %>
 
-<% end %>
-
-
+        <div class= "hidden">
+          <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+          <%= f.input :eventname, :input_html => {:value => "#{@event.name}"} %>
+          <%= f.input :eventdate, :input_html => {:value => "#{@event.date}"} %>
+        </div>
+        <div>
+          </br>
+          <%= f.button :submit, 'Book Now', :class=> "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
 
 </div>

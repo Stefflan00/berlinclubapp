@@ -11,10 +11,11 @@ before_action :authenticate_admin!, only: :dashboard
 
     @club = Club.friendly.find(params[:id])
     @events = @club.events.all
-    
+
   end
 
   def event
+    @booking = Booking.new
     @event = Event.find(params[:id])
   end
 
@@ -29,5 +30,6 @@ before_action :authenticate_admin!, only: :dashboard
   def dashboard
 
   end
+
 
 end

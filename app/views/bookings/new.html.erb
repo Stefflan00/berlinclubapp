@@ -1,0 +1,21 @@
+<h3>Book a Table</h3>
+<div align="center">
+  <%= simple_form_for @booking, :html => {:class => 'form-horizontal' } do |f| %>
+    <%= f.input :name, :required => true %>
+    <%= f.input :email, :required => true %>
+    <%= f.input :tablequantity, :collection => [1,2,3,4,5], :selected => 1 %>
+    <%= f.input :personquantity, :collection => [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], :selected => 1%>
+    <%= f.input :message, :as => :text %>
+    <%= f.input :eventname %>
+    <%= f.input :eventdate %>
+
+    <div class= "hidden">
+      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+
+    </div>
+    <div>
+      </br>
+      <%= f.button :submit, 'Book Now', :class=> "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

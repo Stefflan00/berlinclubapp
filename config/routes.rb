@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'contacts/new'
-
   get 'contacts/create'
+  get 'bookings/new'
+  get 'bookings/create'
 
   devise_for :admins
 
@@ -25,6 +26,9 @@ Rails.application.routes.draw do
 
   match '/contacts', to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
+  match '/bookings',     to: 'bookings#new', via: 'get'
+  resources "bookings", only: [:new, :create]
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
